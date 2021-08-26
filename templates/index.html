@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    
+	<title> Restro Rating Prediction </title>
+    <link rel="stylesheet" href="../static/css/style.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   
+<body>
+
+<style>
+body {
+  background-image: url("https://wallpapermemory.com/uploads/438/restaurant-wallpaper-hd-1920x1200-492489.jpg");
+  background-position: 200%;
+  background-size: cover;
+}
+</style>
+
+  <div class="container">
+    <div class="title">Predict Zomato Restaurant Ratings</div>
+	
+    <div class="content">
+	
+      <form action="{{ url_for('predict')}}"method="post">
+	  
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Online Order</span>
+            <input type="text" name="Online Order" placeholder="Online Order Service(Yes/No)" required />
+          </div>
+          <div class="input-box">
+            <span class="details">Book Table</span>
+            <input type="text" name="Book Table" placeholder="Book Table Service(Yes/No)" required />
+          </div>
+          <div class="input-box">
+            <span class="details">Votes</span>
+            <input type="text" name="Votes" placeholder="Enter Votes" required />
+          </div>
+          <div class="input-box">
+            <span class="details">Location</span>
+            <input type="text" name="Location" placeholder="Enter Location" required />
+          </div>
+          <div class="input-box">
+            <span class="details">Restaurant Type</span>
+            <input type="text" name="Restaurant Type" placeholder="Restaurant Type" required />
+          </div>
+          <div class="input-box">
+            <span class="details">Cuisines</span>
+            <input type="text" name="Cuisines" placeholder="Cuisines" required />
+          </div>
+		  <div class="input-box">
+            <span class="details">Cost</span>
+            <input type="text" name="Cost" placeholder="Enter Cost" required />
+          </div>
+        </div>
+        
+        <div class="button">
+          <input type="submit" value="Predict" />
+        </div>
+      </form>
+      
+        <br>
+        {{ prediction_text }}
+      
+
+    </div>
+
+    <footer style="font-weight: bold; color:brown; margin-inline:130pt;"> 
+       Created by Vishal Bansal @2021 
+      </footer>
+	  </div>
+
+      
+
+</body>
+</html>
